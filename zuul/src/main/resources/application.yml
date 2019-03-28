@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 8094
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8090/eureka/
+zuul:
+  routes:
+    client1:
+       path: /client1/**
+       serviceId: client
+client:
+   ribbon:
+     listOfServers: localhost:8091,localhost:8095
+#暂时关闭eureka对ribbon的支持
+ribbon:
+  eureka:
+    enabled: false
