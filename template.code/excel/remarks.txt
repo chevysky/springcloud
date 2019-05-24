@@ -1,0 +1,17 @@
+1、前端采用ElementUI的upload上传组件；
+2、Controller接收数据流
+    @PostMapping(value = "/excel")
+    public void getExcel(MultipartFile file){
+    new ExcelUtil().analysisExcel(file);
+    }
+3、pom.xml中需要加入的依赖    
+        <dependency><!--处理excel-->
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency><!--处理excel xlsx-->
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.0</version>
+        </dependency>
